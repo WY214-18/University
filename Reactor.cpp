@@ -89,7 +89,7 @@ public:
             poller_->poll(&activeChannels_); // 1. 阻塞等事件
             
             for (Channel* channel : activeChannels_) {
-                channel->handleEvent();      // 2. 触发回调
+                channel->handleEvent();      // 2. 触发回调，所谓回调就是提前写好的执行等到调用再回头执行
             }
         }
     }
